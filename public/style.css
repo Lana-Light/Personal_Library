@@ -1,0 +1,71 @@
+.border {
+  border: green 1px inset;
+  margin: 10px;
+}
+
+#sampleui {
+  max-width: 450px;
+  margin-left: 5%;
+  height: 100%;
+}
+
+#sampleposting {
+  max-width: 450px;
+  text-align: center;
+  margin-left: 5%;
+}
+
+#userstories {
+  margin-left: 5%;
+}
+
+#detailtitle {
+  padding-left: 5px;
+}
+
+form {
+  padding: 5px;
+}
+
+body {
+  background: #ddffdd;
+  color: #003300;
+}
+
+hr {
+  border-color: green;
+}
+
+h1, h2 {
+  background: #bdf9f3;
+  color: #007700;
+}
+
+.error {
+  color: red;
+}
+
+[type=text], [type=submit], button {
+  padding: 3px;
+  color: #003300;
+  border: green 2px ridge;
+  border-radius: 3px;
+}
+
+[type=submit], button {
+  transition: 0.5s;
+  cursor: pointer;
+  margin-top: 5px;
+  background: #44dd33;
+  box-shadow: 1px 1px 8px 1px #003300;
+}
+
+[type=submit]:hover, button:hover {
+  background: #22ff66;
+}
+
+[type=submit]:active, button:active {
+  outline: none;
+  background: lime;
+  box-shadow: none;
+}
