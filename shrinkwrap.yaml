@@ -7,6 +7,7 @@ dependencies:
   helmet: 3.15.0
   mocha: 3.5.3
   mongodb: 3.1.10
+  prettier: 1.18.2
   zombie: 5.0.8
 packages:
   /abab/1.0.4:
@@ -1049,6 +1050,13 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
+  /prettier/1.18.2:
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
   /process-nextick-args/2.0.0:
     dev: false
     resolution:
@@ -1481,4 +1489,5 @@ specifiers:
   helmet: ^3.1.0
   mocha: ^3.2.0
   mongodb: ^3.1.10
+  prettier: ^1.17.1
   zombie: ^5.0.5

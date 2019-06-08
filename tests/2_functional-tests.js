@@ -6,16 +6,25 @@
 *       
 */
 
-var chaiHttp = require('chai-http');
-var chai = require('chai');
-var assert = chai.assert;
-var server = require('../server');
-var _idToTest5;
+const chaiHttp = require('chai-http');
+const chai = require('chai');
+const assert = chai.assert;
+const server = require('../server');
+let _idToAfter1;
+let _idToTest5;
 
 chai.use(chaiHttp);
 
 suite('Functional Tests', function() {
 
+  before(async function() {
+      await chai.request(server)
+      .post('/api/books')
+      .send({'title': 'Imagination'})
+      .then(res => {
+        _idToAfter1 = res.body._id;
+      });
+   });
   /*
   * ----[EXAMPLE TEST]----
   * Each test should completely test the response of the API end-point including response status code!
@@ -111,7 +120,7 @@ suite('Functional Tests', function() {
         chai.request(server)
         .get('/api/books/'+_idToTest5)
         //.query({})
-        .end(function(err, res) {console.log('aaaa',res.body,err);
+        .end(function(err, res) {
           assert.equal(res.status, 200);
           assert.property(res.body, 'title');
           assert.property(res.body, '_id');
@@ -144,7 +153,15 @@ suite('Functional Tests', function() {
       });
       
     });
-
+    
+    after(async function() {
+      await chai.request(server)
+      .delete('/api/books/'+_idToAfter1)
+      .send({});
+      await chai.request(server)
+      .delete('/api/books/'+_idToTest5)
+      .send({});
+   });
   });
 
 });

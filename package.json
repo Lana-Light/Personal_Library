@@ -4,7 +4,8 @@
   "description": "Personal Library for FCC ISQU challenge",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "pretty": "prettier --write {'/app/routes/api.js','/app/server.js'}"
   },
   "dependencies": {
     "express": "^4.14.0",
@@ -15,7 +16,8 @@
     "chai-http": "^3.0.0",
     "mocha": "^3.2.0",
     "zombie": "^5.0.5",
-    "helmet": "^3.1.0"
+    "helmet": "^3.1.0",
+    "prettier": "^1.17.1"
   },
   "engines": {
     "node": "10.13.0"
